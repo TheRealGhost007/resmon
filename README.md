@@ -1,4 +1,4 @@
-# resmon
+# Resmon
 
 A clean system resource monitor for the desktop, in two forms sharing the
 same metrics code:
