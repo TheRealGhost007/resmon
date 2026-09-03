@@ -42,7 +42,21 @@ sudo dnf install python3-gobject python3-psutil gtk4 libadwaita gtk4-layer-shell
 sudo apt install python3-gi python3-psutil gir1.2-gtk-4.0 gir1.2-adw-1
 ```
 
-## Install (adds it to your app launcher)
+## Install
+
+**Arch / Omarchy** — a real, `pacman`-tracked package (installs to `/usr`,
+`pacman -R resmon` to remove, no lingering checkout required):
+
+```
+git clone https://github.com/TheRealGhost007/resmon.git
+cd resmon
+makepkg -si
+```
+
+**Anywhere else** — installs a `resmon` command to `~/.local/bin` plus two
+app-launcher entries (**Resource Monitor** and **Resource Monitor
+Overlay**), pointing back at the checkout (`git pull` to update, no need to
+reinstall):
 
 ```
 git clone https://github.com/TheRealGhost007/resmon.git
@@ -50,10 +64,8 @@ cd resmon
 ./bin/install-app
 ```
 
-Adds a `resmon` command to `~/.local/bin`, plus two entries to your app
-launcher: **Resource Monitor** (the app) and **Resource Monitor Overlay**
-(the widget) — so either can be launched without a terminal. Both keep
-pointing back at this checkout; `git pull` to update, no need to reinstall.
+Either way, either front end can then be launched without a terminal, from
+your app launcher (both entries) or the Omarchy bar (below).
 
 ## Run
 
@@ -221,9 +233,13 @@ src/resmon/
   style-onyx.css             overlay look & feel, Onyx theme
 
 data/icons/               app icon (SVG)
-bin/resmon                 launcher (handles the gtk4-layer-shell LD_PRELOAD fix)
-bin/install-app             installs the command + app-launcher entries
+bin/resmon                 dev-checkout launcher (handles the LD_PRELOAD fix + PYTHONPATH)
+bin/install-app             installs the command + app-launcher entries (non-Arch path)
 bin/install-bar-widget       registers resmon as an Omarchy bar module
+
+PKGBUILD                  Arch package (makepkg -si) — installs to /usr, pacman-tracked
+packaging/resmon            the installed entry point (LD_PRELOAD fix only, no PYTHONPATH needed)
+packaging/*.desktop         static launcher entries for the packaged install
 ```
 
 ## Development

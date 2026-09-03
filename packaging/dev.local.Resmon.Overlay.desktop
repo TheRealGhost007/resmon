@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Resource Monitor Overlay
+Comment=Docks the resource monitor widget to a screen corner
+Exec=resmon --overlay
+Icon=dev.local.Resmon
+Terminal=false
+Categories=Utility;
+StartupWMClass=dev.local.Resmon.Overlay

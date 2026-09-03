@@ -9,3 +9,8 @@ dist/
 .ruff_cache/
 *.swp
 .DS_Store
+
+# makepkg build artifacts (see PKGBUILD)
+pkg/
+*.pkg.tar.*
+

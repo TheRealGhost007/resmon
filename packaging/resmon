@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# The installed entry point (see bin/resmon for the git-checkout dev
+# version). Only the LD_PRELOAD fix is needed here — a real package install
+# already puts the `resmon` module on Python's default import path, so
+# there's no PYTHONPATH to set up.
+set -euo pipefail
+
+preload="${LD_PRELOAD:-}"
+if [[ -f /usr/lib/libgtk4-layer-shell.so ]]; then
+    preload="/usr/lib/libgtk4-layer-shell.so${preload:+:$preload}"
+fi
+
+exec env LD_PRELOAD="${preload}" python3 -m resmon "$@"

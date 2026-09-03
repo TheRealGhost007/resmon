@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Resource Monitor
+Comment=A clean, minimal system resource monitor
+Exec=resmon
+Icon=dev.local.Resmon
+Terminal=false
+Categories=Utility;
+StartupWMClass=dev.local.Resmon
