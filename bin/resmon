@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+set -euo pipefail
+self="$(readlink -f "${BASH_SOURCE[0]}")"
+here="$(cd "$(dirname "$self")/.." && pwd)"
+
+preload="${LD_PRELOAD:-}"
+if [[ -f /usr/lib/libgtk4-layer-shell.so ]]; then
+    preload="/usr/lib/libgtk4-layer-shell.so${preload:+:$preload}"
+fi
+
+exec env PYTHONPATH="${here}/src:${PYTHONPATH:-}" LD_PRELOAD="${preload}" python3 -m resmon "$@"

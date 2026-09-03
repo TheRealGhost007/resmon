@@ -1,0 +1,57 @@
+window {
+    background: transparent;
+}
+
+.resmon-card {
+    background-color: rgba(22, 23, 27, 0.86);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    padding: 14px 16px;
+}
+
+.resmon-title {
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: rgba(255, 255, 255, 0.38);
+}
+
+.metric-name {
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 12px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.metric-value {
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 12px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.94);
+}
+
+.metric-value-large {
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.metric-graph {
+    min-height: 34px;
+}
+
+button.resmon-dot {
+    min-width: 14px;
+    min-height: 14px;
+    padding: 0;
+    margin: 0;
+    border-radius: 999px;
+    background-color: rgba(255, 255, 255, 0.85);
+    background-image: none;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+}
+
+button.resmon-dot:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
